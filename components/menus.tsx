@@ -1,25 +1,32 @@
 import React from "react";
 import Link from "next/link";
 
+const menus = [
+  {
+    title: "Issue Board",
+    path: "/issue-board",
+  },
+  {
+    title: "Profile",
+    path: "/profile",
+  },
+];
+
 const Menus = () => {
   return (
     <ul className="flex flex-1 gap-4">
-      <li>
-        <Link
-          href="/issue-board"
-          className="px-2 py-1 leading-none hover:border-dashed border-transparent border-4 hover:border-[--primary]"
-        >
-          Issue board
-        </Link>
-      </li>
-      <li>
-        <Link
-          href="/profile"
-          className="px-2 py-1 leading-none hover:border-dashed border-transparent border-4 hover:border-[--primary]"
-        >
-          profile
-        </Link>
-      </li>
+      {menus?.map((menu) => {
+        return (
+          <li key={menu.title}>
+            <Link
+              href={menu.path}
+              className="px-3 pt-1 pb-4 leading-none hover:border-b-[--primary] hover:border-b-4 hover:text-[--primary]"
+            >
+              {menu.title}
+            </Link>
+          </li>
+        );
+      })}
     </ul>
   );
 };
