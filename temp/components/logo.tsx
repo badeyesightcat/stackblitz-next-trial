@@ -1,5 +1,5 @@
 import React from "react";
-import fonts from "@/lib/fonts";
+import fonts from "@/temp/lib/fonts";
 import classNames from "classnames";
 
 const Logo = () => {

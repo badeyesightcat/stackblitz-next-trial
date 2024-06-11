@@ -1,6 +1,6 @@
 "use client";
 
-import type { PageProps } from "@/types/common";
+import type { PageProps } from "@/temp/types/common";
 
 const ProfilePage = (props: PageProps) => {
   return (
