@@ -1,5 +1,9 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import classNames from "classnames";
+import { usePathname } from "next/navigation";
 
 const menus = [
   {
@@ -13,6 +17,8 @@ const menus = [
 ];
 
 const Menus = () => {
+  const pathname = usePathname();
+
   return (
     <ul className="flex flex-1 gap-4">
       {menus?.map((menu) => {
@@ -20,7 +26,12 @@ const Menus = () => {
           <li key={menu.title}>
             <Link
               href={menu.path}
-              className="px-3 pt-1 pb-4 leading-none hover:border-b-[--primary] hover:border-b-4 hover:text-[--primary]"
+              className={classNames(
+                "box-border px-3 pt-1 pb-4 leading-none hover:border-b-[--dark] hover:border-b-4 hover:text-[--dark]",
+                pathname === menu.path
+                  ? "bg-[--dark] text-white border-b-[--dark] hover:border-none hover:text-white focus:text-white"
+                  : ""
+              )}
             >
               {menu.title}
             </Link>
