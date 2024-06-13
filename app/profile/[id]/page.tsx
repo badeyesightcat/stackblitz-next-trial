@@ -1,5 +1,5 @@
 "use client";
-import { PageProps } from "@/temp/types/common";
+import { PageProps } from "@/types/common";
 import React from "react";
 
 const ProfileItem = ({ params }: PageProps) => {
