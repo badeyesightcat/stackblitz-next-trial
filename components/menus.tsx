@@ -1,9 +1,9 @@
 "use client";
 
-import React from "react";
-import Link from "next/link";
+import React, { useState } from "react";
 import classNames from "classnames";
-import { usePathname } from "next/navigation";
+import MenuItem from "./menuItem";
+import SessionButton from "./sessionButton";
 
 const menus = [
   {
@@ -17,28 +17,56 @@ const menus = [
 ];
 
 const Menus = () => {
-  const pathname = usePathname();
+  const [openMobileMenu, setOpenMobileMenu] = useState(false);
+
+  // temporary
+  const session = true;
+  const isAdmin = false;
 
   return (
-    <ul className="flex flex-1 gap-4">
-      {menus?.map((menu) => {
-        return (
-          <li key={menu.title}>
-            <Link
-              href={menu.path}
-              className={classNames(
-                "box-border px-3 pt-1 pb-4 leading-none hover:border-b-[--dark] hover:border-b-4 hover:text-[--dark]",
-                pathname === menu.path
-                  ? "bg-[--dark] text-white border-b-[--dark] hover:border-none hover:text-white focus:text-white"
-                  : ""
-              )}
-            >
-              {menu.title}
-            </Link>
+    <>
+      <div className="flex">
+        <ul className="flex flex-1 gap-4">
+          {menus?.map((menu) => (
+            <MenuItem
+              key={menu.title}
+              title={menu.title}
+              path={menu.path}
+            />
+          ))}
+          {session && isAdmin && (
+            <MenuItem
+              title="Admin"
+              path="/admin"
+            />
+          )}
+          <li>
+            <SessionButton session={session} />
           </li>
-        );
-      })}
-    </ul>
+        </ul>
+      </div>
+      <div className={classNames(openMobileMenu ? "block" : "hidden")}>
+        <button type="button">menu</button>
+        <ul className="flex flex-1 gap-4">
+          {menus?.map((menu) => (
+            <MenuItem
+              key={menu.title}
+              title={menu.title}
+              path={menu.path}
+            />
+          ))}
+          {session && isAdmin && (
+            <MenuItem
+              title="Admin"
+              path="/admin"
+            />
+          )}
+          <li>
+            <SessionButton session={session} />
+          </li>
+        </ul>
+      </div>
+    </>
   );
 };
 
