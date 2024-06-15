@@ -27,7 +27,7 @@ const Menus = () => {
     <>
       <div
         className={classNames(
-          "absolute bg-[--light] min-h-[40vh] left-0 w-full flex items-center px-5 justify-center",
+          "absolute bg-[--light] min-h-[40vh] left-0 w-full flex items-center px-5 justify-center z-10",
           "lg:static lg:min-h-fit lg:bg-transparent lg:w-auto",
           openMobileMenu
             ? "top-[5.25rem] duration-300"
