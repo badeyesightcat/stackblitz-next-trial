@@ -5,7 +5,14 @@ interface SessionButtonProp {
 }
 
 const SessionButton = ({ session }: SessionButtonProp) => {
-  return <button type="button">{session ? "Logout" : "Login"}</button>;
+  return (
+    <button
+      type="button"
+      className="px-4 py-6 leading-none hover:text-white"
+    >
+      {session ? "Logout" : "Login"}
+    </button>
+  );
 };
 
 export default SessionButton;
