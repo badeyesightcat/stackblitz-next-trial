@@ -4,10 +4,12 @@ import Menus from "./menus";
 
 const Navbar = () => {
   return (
-    <nav className="flex gap-8 items-center justify-between">
-      <Logo />
-      <Menus />
-    </nav>
+    <header className="bg-[--light]">
+      <nav className="container mx-auto flex items-center justify-between">
+        <Logo />
+        <Menus />
+      </nav>
+    </header>
   );
 };
 
