@@ -21,12 +21,20 @@ const Menus = () => {
 
   // temporary
   const session = true;
-  const isAdmin = false;
+  const isAdmin = true;
 
   return (
     <>
-      <div className="flex">
-        <ul className="flex flex-1 gap-4">
+      <div
+        className={classNames(
+          "absolute bg-[--light] min-h-[40vh] left-0 w-full flex items-center px-5 justify-center",
+          "lg:static lg:min-h-fit lg:bg-transparent lg:w-auto",
+          openMobileMenu
+            ? "top-[5.25rem] duration-300"
+            : "top-[-100%] duration-500"
+        )}
+      >
+        <ul className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-10">
           {menus?.map((menu) => (
             <MenuItem
               key={menu.title}
@@ -40,32 +48,18 @@ const Menus = () => {
               path="/admin"
             />
           )}
-          <li>
+          <li className="flex justify-center">
             <SessionButton session={session} />
           </li>
         </ul>
       </div>
-      <div className={classNames(openMobileMenu ? "block" : "hidden")}>
-        <button type="button">menu</button>
-        <ul className="flex flex-1 gap-4">
-          {menus?.map((menu) => (
-            <MenuItem
-              key={menu.title}
-              title={menu.title}
-              path={menu.path}
-            />
-          ))}
-          {session && isAdmin && (
-            <MenuItem
-              title="Admin"
-              path="/admin"
-            />
-          )}
-          <li>
-            <SessionButton session={session} />
-          </li>
-        </ul>
-      </div>
+      <button
+        className="lg:hidden"
+        type="button"
+        onClick={() => setOpenMobileMenu((open) => !open)}
+      >
+        {openMobileMenu ? "close" : "menu"}
+      </button>
     </>
   );
 };
