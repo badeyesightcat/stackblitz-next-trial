@@ -13,13 +13,14 @@ interface MenuProp {
 const MenuItem = ({ title, path }: MenuProp) => {
   const pathname = usePathname();
   return (
-    <li>
+    <li className="flex justify-center">
       <Link
         href={path}
         className={classNames(
-          "box-border px-3 pt-1 pb-4 leading-none hover:border-b-[--dark] hover:border-b-4 hover:text-[--dark]",
+          "box-border px-2 py-4 leading-none",
+          "hover:text-white",
           pathname === path
-            ? "bg-[--dark] text-white border-b-[--dark] hover:border-none hover:text-white focus:text-white"
+            ? "border-y-[--dark] border-y-4 text-[--dark] hover:text-[--dark] focus:text-[--dark]"
             : ""
         )}
       >
