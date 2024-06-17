@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import classNames from "classnames";
-import MenuItem from "./menuItem";
-import SessionButton from "./sessionButton";
+import MenuItem from "./MenuItem";
+import SessionButton from "./SessionButton";
 
 const menus = [
   {

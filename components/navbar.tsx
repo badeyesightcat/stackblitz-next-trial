@@ -1,6 +1,6 @@
 import React from "react";
-import Logo from "./logo";
-import Menus from "./menus";
+import Logo from "./Logo";
+import Menus from "./Menus";
 
 const Navbar = () => {
   return (
