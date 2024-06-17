@@ -16,7 +16,7 @@ const Logo = ({ footer }: LogoProps) => {
           : "text-7xl px-4 pb-8 -mt-2 before:h-1"
       )}
     >
-      issue tracker
+      Charlie&apos;s Desk
     </h1>
   );
 };
