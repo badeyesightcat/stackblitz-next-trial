@@ -1,7 +1,12 @@
+import IssueTrackingHeader from "@/components/IssueTrackingHeader";
 import React from "react";
 
 const IssueBoardPage = () => {
-  return <div>IssueBoardPage</div>;
+  return (
+    <>
+      <IssueTrackingHeader />
+    </>
+  );
 };
 
 export default IssueBoardPage;
