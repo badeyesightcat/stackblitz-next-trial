@@ -11,22 +11,11 @@ const issueTableHeaderCells = [
   { title: "priority" },
 ];
 
-const issueTableBodyCells = [
-  {
-    title: "Plan the first sprint",
-    collectionType: "In progress",
-    tag: [],
-    owner: "Charlie",
-    date: Date.now(),
-    priority: "High priority",
-  },
-];
-
 const IssueTable = () => {
   return (
     <div>
       <IssueTableHeader headCells={issueTableHeaderCells} />
-      <IssueTableBody bodyCells={issueTableBodyCells} />
+      <IssueTableBody />
     </div>
   );
 };
