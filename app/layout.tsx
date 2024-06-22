@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={fonts.inter.className}>
         <Navbar />
-        <main className="container mx-auto">{children}</main>
+        <main className="container mx-auto min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>
