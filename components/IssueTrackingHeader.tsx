@@ -43,7 +43,7 @@ const IssueTrackingHeader = () => {
       </h2>
 
       <div className="flex gap-4">
-        <button className="pt-2 px-3 pb-3 leading-none bg-[--dark] text-white">
+        <button className="pt-2 px-3 pb-3 leading-none bg-[--dark] text-white text-sm">
           create issue
         </button>
 
