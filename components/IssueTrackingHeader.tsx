@@ -35,11 +35,11 @@ const IssueTrackingHeader = () => {
     <div className="flex py-6 justify-between">
       <h2
         className={classNames(
-          "relative text-xl text-[--dark] z-10",
+          "relative text-xl text-[--dark] z-10 uppercase",
           "before:content-[''] before:absolute before:w-full before:h-2 before:bg-[--light] before:left-0 before:top-[30%] before:z-[-1]"
         )}
       >
-        ISSUE TRACKER
+        issue board
       </h2>
 
       <div className="flex gap-4">
