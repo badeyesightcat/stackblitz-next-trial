@@ -10,13 +10,13 @@ const Logo = ({ footer }: LogoProps) => {
     <h1
       className={classNames(
         fonts.comfortaa.className,
-        "font-bold bg-[--light] text-[--dark] leading-none relative before:w-full before:bg-white before:left-0 before:content-[''] before:absolute before:z-10",
+        "font-bold bg-[--light] text-white leading-none relative before:w-full before:bg-white before:left-0 before:content-[''] before:absolute before:z-10",
         footer
-          ? "w-fit px-2 pt-4 text-xl before:h-[.25rem] grayscale before:top-1"
-          : "text-4xl px-4 pt-8 -mt-[.25rem] before:h-[.3rem] before:top-3"
+          ? "w-fit px-5 pt-5 pb-2 text-xl before:h-[.25rem] grayscale before:top-1"
+          : "text-2xl px-5 pt-8 pb-3 -mt-[.25rem] before:h-[.3rem] before:top-3"
       )}
     >
-      Charlie&apos;s {footer ? "" : <br />} Desk
+      Charlie&apos;s <br /> Desk
     </h1>
   );
 };
