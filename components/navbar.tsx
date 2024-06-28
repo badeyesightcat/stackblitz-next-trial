@@ -5,7 +5,7 @@ import Menus from "./Menus";
 const Navbar = () => {
   return (
     <header className="bg-[--light]">
-      <nav className="container mx-auto flex items-center justify-between">
+      <nav className="flex items-center justify-between">
         <Logo />
         <Menus />
       </nav>

@@ -13,7 +13,7 @@ const issueTableHeaderCells = [
 
 const IssueTable = () => {
   return (
-    <div>
+    <div className="bg-white">
       <IssueTableHeader headCells={issueTableHeaderCells} />
       <IssueTableBody />
     </div>
