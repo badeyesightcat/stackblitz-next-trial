@@ -16,10 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={fonts.inter.className}>
+      <body className={`min-h-screen ${fonts.inter.className}`}>
         <Navbar />
-        <main className="container mx-auto min-h-screen">{children}</main>
-        <Footer />
+        <main>{children}</main>
+        {/* <Footer /> */}
       </body>
     </html>
   );
