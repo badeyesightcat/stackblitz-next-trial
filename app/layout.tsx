@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+// import Footer from "@/components/Footer";
 import fonts from "@/lib/fonts";
 import "./globals.css";
+import StoreProvider from "./StoreProvider";
 
 export const metadata: Metadata = {
   title: "Issue tracker made with Create Next App",
@@ -15,12 +16,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`min-h-screen ${fonts.inter.className}`}>
-        <Navbar />
-        <main>{children}</main>
-        {/* <Footer /> */}
-      </body>
-    </html>
+    <StoreProvider>
+      <html lang="en">
+        <body className={`min-h-screen ${fonts.inter.className}`}>
+          <Navbar />
+          <main>{children}</main>
+          {/* <Footer /> */}
+        </body>
+      </html>
+    </StoreProvider>
   );
 }
