@@ -8,7 +8,6 @@ const rootReducer = combineReducers({
 });
 
 export const makeStore = () => {
-  console.log(rootReducer);
   return configureStore({
     reducer: rootReducer,
     // middleware: null,
