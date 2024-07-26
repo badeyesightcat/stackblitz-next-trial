@@ -1,6 +1,6 @@
 import React from "react";
 import IssueTableCell from "./IssueTableCell";
-import { GoCalendar, GoPeople, GoStack, GoTag } from "react-icons/go";
+import { GoCalendar, GoPeople, GoStack, GoTag, GoPerson } from "react-icons/go";
 
 interface IssueTableHeadCellProps {
   title: string;
@@ -26,7 +26,10 @@ const IssueTableHeader = ({ headCells }: IssueTableHeaderProps) => {
             {cell.title.toLowerCase().includes("tag") && (
               <GoTag fill="#082f49" />
             )}
-            {cell.title.toLowerCase().includes("owner") && (
+            {cell.title.toLowerCase().includes("reported") && (
+              <GoPerson fill="#082f49" />
+            )}
+            {cell.title.toLowerCase().includes("assigned") && (
               <GoPeople fill="#082f49" />
             )}
             {cell.title.toLowerCase().includes("date") && (

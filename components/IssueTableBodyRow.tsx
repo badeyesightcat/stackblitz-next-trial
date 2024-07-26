@@ -5,7 +5,8 @@ interface IssueTableBodyRowCellProps {
   title: string;
   collectionType: string;
   tag: Array<string>;
-  owner: string;
+  reportedBy: string;
+  assignedTo: string;
   date: string | Date;
   priority: string;
 }

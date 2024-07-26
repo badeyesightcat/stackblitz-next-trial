@@ -6,7 +6,8 @@ const issueTableHeaderCells = [
   { title: "title" },
   { title: "collections" },
   { title: "tag" },
-  { title: "owner" },
+  { title: "reported by" },
+  { title: "assigned to" },
   { title: "date" },
   { title: "priority" },
 ];
