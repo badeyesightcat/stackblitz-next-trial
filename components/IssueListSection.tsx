@@ -4,7 +4,7 @@ import IssueTrackingHeader from "@/components/IssueTrackingHeader";
 
 const IssueListSection = () => {
   return (
-    <div className="pr-4 flex-1">
+    <div className="flex-1 basis-1/2">
       <IssueTrackingHeader />
       <IssueTable />
     </div>
