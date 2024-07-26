@@ -1,21 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { DetailViewType } from "@/types/issues";
+import type { DetailViewVisibility, DetailViewSize } from "@/types/ui";
 import { RootState } from "@/lib/store";
 
 const uiSlice = createSlice({
   name: "ui",
   initialState: {
-    detailViewType: <DetailViewType>0,
+    detailViewVisibility: <DetailViewVisibility>0,
+    detailViewSize: <DetailViewSize>0,
   },
   reducers: {
-    setDetailViewType: (state, action) => {
-      action.type === "ui/setDetailViewType" &&
-        (state.detailViewType = action.payload);
+    setDetailViewVisibility: (state, action) => {
+      action.type === "ui/setDetailViewVisibility" &&
+        (state.detailViewVisibility = action.payload);
+    },
+    setDetailViewSize: (state, action) => {
+      action.type === "ui/setDetailViewSize" &&
+        (state.detailViewSize = action.payload);
     },
   },
 });
 
-export const selectDetailViewType = (state: RootState) =>
-  state.ui.detailViewType;
-export const { setDetailViewType } = uiSlice.actions;
+export const selectDetailViewVisibility = (state: RootState) =>
+  state.ui.detailViewVisibility;
+export const selectDetailViewSize = (state: RootState) =>
+  state.ui.detailViewSize;
+export const { setDetailViewVisibility, setDetailViewSize } = uiSlice.actions;
 export default uiSlice.reducer;
