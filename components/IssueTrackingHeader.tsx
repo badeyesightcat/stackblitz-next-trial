@@ -1,73 +1,75 @@
-"use client";
 import classNames from "classnames";
-import React, { useState } from "react";
+import React from "react";
+import { GoScreenFull, GoScreenNormal } from "react-icons/go";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import {
-  GoMoveToEnd,
-  GoMoveToStart,
-  GoScreenFull,
-  GoScreenNormal,
-} from "react-icons/go";
-
-enum SidebarVisibilityType {
-  Hidden,
-  Shown,
-}
-
-enum SidebarSizeType {
-  Half,
-  Total,
-}
+  setDetailViewVisibility,
+  selectDetailViewVisibility,
+} from "@/lib/features/ui/uiSlice";
 
 const IssueTrackingHeader = () => {
-  const [listVisibility, setListVisibility] =
-    useState<SidebarVisibilityType>(0);
-  const [listSize, setListSize] = useState<SidebarSizeType>();
-
-  const handleListSize = () => {
-    setListSize((prev) => (prev === 0 ? 1 : 0));
-  };
-
-  const handleListVisibility = () => {
-    setListVisibility((prev) => (prev === 0 ? 1 : 0));
-  };
+  const detailViewVisibility = useAppSelector(selectDetailViewVisibility);
+  const dispatch = useAppDispatch();
 
   return (
     <div className="flex py-6 justify-between">
-      <h2
-        className={classNames(
-          "relative text-xl text-[--dark] z-1 uppercase",
-          "before:content-[''] before:absolute before:w-full before:h-2 before:bg-[--light] before:left-0 before:top-[30%] before:z-[-1]"
-        )}
-      >
-        issue board
-      </h2>
+      {detailViewVisibility !== 2 && (
+        <h2
+          className={classNames(
+            "relative text-xl text-[--dark] z-1 uppercase",
+            "before:content-[''] before:absolute before:w-full before:h-2 before:bg-[--light] before:left-0 before:top-[30%] before:z-[-1]"
+          )}
+        >
+          issue board
+        </h2>
+      )}
 
       <div className="flex gap-4">
-        <button className="pt-2 px-3 pb-3 leading-none bg-[--dark] text-white text-sm">
-          create issue
-        </button>
+        {detailViewVisibility !== 2 && (
+          <>
+            <button className="pt-2 px-3 pb-3 leading-none bg-[--dark] text-white text-sm">
+              create issue
+            </button>
 
-        <button
-          title={listSize === 0 ? "maximize sidebar" : "minimize sidebar"}
-          onClick={handleListSize}
-        >
-          {listSize === 0 ? (
-            <GoScreenFull size={26} />
-          ) : (
-            <GoScreenNormal size={26} />
-          )}
-        </button>
+            <button
+              title={
+                detailViewVisibility === 0
+                  ? "Show the detail section in half"
+                  : "Hide the detail section"
+              }
+              onClick={
+                detailViewVisibility === 0
+                  ? () => dispatch(setDetailViewVisibility(1))
+                  : () => dispatch(setDetailViewVisibility(0))
+              }
+            >
+              {detailViewVisibility === 0 ? (
+                <GoScreenNormal size={26} />
+              ) : (
+                <GoScreenFull size={26} />
+              )}
+            </button>
+          </>
+        )}
 
-        <button
-          title={listVisibility === 0 ? "maximize sidebar" : "minimize sidebar"}
-          onClick={handleListVisibility}
+        {/* <button
+          title={
+            detailViewSize === 0
+              ? "Show the detail section in full"
+              : "Hide the detail section"
+          }
+          onClick={
+            detailViewSize === 0
+              ? () => dispatch(setDetailViewSize(2))
+              : () => dispatch(setDetailViewSize(0))
+          }
         >
-          {listVisibility === 0 ? (
+          {detailViewSize === 0 ? (
             <GoMoveToStart size={26} />
           ) : (
             <GoMoveToEnd size={26} />
           )}
-        </button>
+        </button> */}
       </div>
     </div>
   );
