@@ -6,53 +6,53 @@ const issueTableBodyRows = [
   {
     title: "Plan the first sprint",
     collectionType: "Backlog",
-    tag: [],
+    tag: ["Integration"],
     reportedBy: "Charlie",
-    assignedTo: "",
-    date: "",
+    assignedTo: "Daria",
     priority: "High priority",
+    date: new Date().toLocaleDateString(),
   },
   {
     title: "Fix duplicate notifications",
     collectionType: "Backlog",
     tag: ["Bug"],
-    reportedBy: "",
-    assignedTo: "",
-    date: "",
-    priority: "",
+    reportedBy: "Charlie",
+    assignedTo: "Lizzy",
+    priority: "Low priority",
+    date: new Date().toLocaleDateString(),
   },
   {
     title: "Enable checkout on mobile",
     collectionType: "Backlog",
     tag: ["Mobile"],
-    reportedBy: "",
-    assignedTo: "",
-    date: "",
-    priority: "",
+    reportedBy: "Charlie",
+    assignedTo: "Dolores",
+    priority: "High priority",
+    date: new Date().toLocaleDateString(),
   },
   {
     title: "Add intercom integration",
     collectionType: "Backlog",
     tag: ["Integration"],
-    reportedBy: "",
-    assignedTo: "",
-    date: "",
-    priority: "",
+    reportedBy: "Charlie",
+    assignedTo: "Nick",
+    priority: "Low priority",
+    date: new Date().toLocaleDateString(),
   },
   {
     title: "Sprint item template",
     collectionType: "Backlog",
-    tag: [],
-    reportedBy: "",
-    assignedTo: "",
-    date: "",
-    priority: "",
+    tag: ["Styling"],
+    reportedBy: "Charlie",
+    assignedTo: "Bazos",
+    priority: "Medium priority",
+    date: new Date().toLocaleDateString(),
   },
 ];
 
 const IssueTableBody = () => {
   return (
-    <div>
+    <div className="items-stretch grow">
       {issueTableBodyRows?.map((row) => (
         <IssueTableBodyRow
           key={`${row.title}-${row.date}`}
