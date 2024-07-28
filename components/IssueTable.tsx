@@ -8,13 +8,13 @@ const issueTableHeaderCells = [
   { title: "tag" },
   { title: "reported by" },
   { title: "assigned to" },
-  { title: "date" },
   { title: "priority" },
+  { title: "date" },
 ];
 
 const IssueTable = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-white flex flex-col">
       <IssueTableHeader headCells={issueTableHeaderCells} />
       <IssueTableBody />
     </div>
