@@ -20,7 +20,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={`min-h-screen ${fonts.inter.className}`}>
           <Navbar />
-          <main>{children}</main>
+          <main className="flex flex-col">{children}</main>
           {/* <Footer /> */}
         </body>
       </html>
