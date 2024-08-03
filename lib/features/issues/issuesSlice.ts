@@ -2,6 +2,7 @@ import { RootState } from "@/lib/store";
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface Issue {
+  _id: string;
   title: string;
   collectionType: string;
   tag: string[];
@@ -18,6 +19,7 @@ export interface IssuesState {
 const initialState: IssuesState = {
   list: [
     {
+      _id: "1",
       title: "Plan the first sprint",
       collectionType: "Backlog",
       tag: ["Integration"],
@@ -27,6 +29,7 @@ const initialState: IssuesState = {
       date: new Date().toLocaleDateString(),
     },
     {
+      _id: "2",
       title: "Fix duplicate notifications",
       collectionType: "Backlog",
       tag: ["Bug"],
@@ -36,6 +39,7 @@ const initialState: IssuesState = {
       date: new Date().toLocaleDateString(),
     },
     {
+      _id: "3",
       title: "Enable checkout on mobile",
       collectionType: "Backlog",
       tag: ["Mobile"],
@@ -45,6 +49,7 @@ const initialState: IssuesState = {
       date: new Date().toLocaleDateString(),
     },
     {
+      _id: "4",
       title: "Add intercom integration",
       collectionType: "Backlog",
       tag: ["Integration"],
@@ -54,6 +59,7 @@ const initialState: IssuesState = {
       date: new Date().toLocaleDateString(),
     },
     {
+      _id: "5",
       title: "Sprint item template",
       collectionType: "Backlog",
       tag: ["Styling"],

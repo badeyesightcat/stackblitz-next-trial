@@ -11,7 +11,7 @@ const IssueTableBody = () => {
     <div className="items-stretch grow">
       {issues?.map((row) => (
         <IssueTableBodyRow
-          key={`${row.title}-${row.date}`}
+          key={row._id}
           row={row}
         />
       ))}

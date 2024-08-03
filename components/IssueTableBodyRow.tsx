@@ -20,11 +20,13 @@ const IssueTableBodyRow = ({ row }: IssueTableBodyRowProps) => {
 
   return (
     <div className="flex">
-      {rowEntries?.map((entry, idx) => (
+      {rowEntries?.map(
+        (entry, idx) =>
+          entry[0] !== "_id" && (
         <IssueTableCell
           key={`${entry[0]}-${entry[1]}`}
           cellType="td"
-          isLonger={idx === 0}
+              isLonger={idx === 1}
         >
           {entry[1]}
         </IssueTableCell>
