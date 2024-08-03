@@ -1,11 +1,23 @@
 import { RootState } from "@/lib/store";
 import { createSlice } from "@reduxjs/toolkit";
 
+export interface Issue {
+  title: string;
+  collectionType: string;
+  tag: string[];
+  reportedBy: string;
+  assignedTo: string;
+  priority: string;
+  date: string;
+}
+
+export interface IssuesState {
+  list: Issue[];
+}
+
 export const issuesSlice = createSlice({
   name: "issues",
-  initialState: {
-    list: <any>[],
-  },
+  initialState,
   reducers: {
     add: (state, action) => {
       state.list = [...state.list, action.payload];
