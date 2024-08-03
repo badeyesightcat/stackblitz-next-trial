@@ -15,7 +15,7 @@ const issueTableHeaderCells = [
 const IssueTable = () => {
   return (
     <div className="bg-white flex flex-col">
-      <IssueTableHeader headCells={issueTableHeaderCells} />
+      <IssueTableHeader headerCells={issueTableHeaderCells} />
       <IssueTableBody />
     </div>
   );

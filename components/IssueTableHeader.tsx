@@ -7,20 +7,20 @@ interface IssueTableHeadCellProps {
 }
 
 interface IssueTableHeaderProps {
-  headCells: Array<IssueTableHeadCellProps>;
+  headerCells: Array<IssueTableHeadCellProps>;
 }
 
 // const withIcon = ["tag", "owner", "date", "priority"];
 
-const IssueTableHeader = ({ headCells }: IssueTableHeaderProps) => {
+const IssueTableHeader = ({ headerCells }: IssueTableHeaderProps) => {
   return (
     <div className="flex items-center justify-around border-y border-y-gray-300">
-      {headCells.length > 0 &&
-        headCells.map((cell, index) => (
+      {headerCells.length > 0 &&
+        headerCells.map((cell, index) => (
           <IssueTableCell
             key={cell.title}
             cellType="th"
-            isLastHead={index === headCells.length - 1}
+            isLastHead={index === headerCells.length - 1}
             isLonger={index === 0}
           >
             {cell.title.toLowerCase().includes("tag") && (
