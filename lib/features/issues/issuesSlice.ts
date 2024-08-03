@@ -15,6 +15,56 @@ export interface IssuesState {
   list: Issue[];
 }
 
+const initialState: IssuesState = {
+  list: [
+    {
+      title: "Plan the first sprint",
+      collectionType: "Backlog",
+      tag: ["Integration"],
+      reportedBy: "Charlie",
+      assignedTo: "Daria",
+      priority: "High priority",
+      date: new Date().toLocaleDateString(),
+    },
+    {
+      title: "Fix duplicate notifications",
+      collectionType: "Backlog",
+      tag: ["Bug"],
+      reportedBy: "Charlie",
+      assignedTo: "Lizzy",
+      priority: "Low priority",
+      date: new Date().toLocaleDateString(),
+    },
+    {
+      title: "Enable checkout on mobile",
+      collectionType: "Backlog",
+      tag: ["Mobile"],
+      reportedBy: "Charlie",
+      assignedTo: "Dolores",
+      priority: "High priority",
+      date: new Date().toLocaleDateString(),
+    },
+    {
+      title: "Add intercom integration",
+      collectionType: "Backlog",
+      tag: ["Integration"],
+      reportedBy: "Charlie",
+      assignedTo: "Nick",
+      priority: "Low priority",
+      date: new Date().toLocaleDateString(),
+    },
+    {
+      title: "Sprint item template",
+      collectionType: "Backlog",
+      tag: ["Styling"],
+      reportedBy: "Charlie",
+      assignedTo: "Bazos",
+      priority: "Medium priority",
+      date: new Date().toLocaleDateString(),
+    },
+  ],
+};
+
 export const issuesSlice = createSlice({
   name: "issues",
   initialState,
