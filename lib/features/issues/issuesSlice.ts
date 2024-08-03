@@ -1,5 +1,5 @@
 import { RootState } from "@/lib/store";
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface Issue {
   _id: string;
@@ -75,8 +75,16 @@ export const issuesSlice = createSlice({
   name: "issues",
   initialState,
   reducers: {
-    add: (state, action) => {
+    add: (state, action: PayloadAction<Issue>) => {
       state.list = [...state.list, action.payload];
+    },
+    remove: (state, action: PayloadAction<string>) => {
+      state.list = state.list.filter((issue) => issue.id !== action.payload);
+    },
+    update: (state, action: PayloadAction<Issue>) => {
+      state.list = state.list.map((issue) =>
+        issue._id === action.payload._id ? action.payload : issue
+      );
     },
   },
 });
@@ -95,5 +103,5 @@ export const issuesSlice = createSlice({
 
 export const selectIssues = (state: RootState) => state.issues.list;
 
-export const { add } = issuesSlice.actions;
+export const { add, remove, update } = issuesSlice.actions;
 export default issuesSlice.reducer;
